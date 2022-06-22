@@ -19,7 +19,7 @@ public class Person {
         this.publicServer = publicServer;
     }
 
-    public String fullname() {
+    public String fullName() {
         return String.format("%s %s", this.name, this.surname);
     }
 
@@ -36,11 +36,11 @@ public class Person {
     }
 
     public boolean isMEI() {
-        LocalDate now = new LocalDate();
-        LocalDate birth = .toInstant()
-                .atZone(ZoneId.systemDefault())
-                .toLocalDate();
-        long age = ChronoUnit.YEARS.between(birth, now);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        int year = calendar.get(Calendar.YEAR);
+        calendar.setTime(birthDate);
+        int age = year - calendar.get(Calendar.YEAR);
         if (calculateYearlySalary() < 130000 && age > 18 && !anotherCompanyOwner && !pensioner && !publicServer) {
             return true;
         }
