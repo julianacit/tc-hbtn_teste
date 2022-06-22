@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.*;
-import org.junit.jupiter.params.provider.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class PersonTest {
-    Person person;
+    public static Person person;
 
     @BeforeAll
-    public void setup() {
+    public static void setup() {
         person = new Person();
     }
 
