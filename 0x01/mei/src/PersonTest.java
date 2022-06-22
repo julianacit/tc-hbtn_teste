@@ -3,7 +3,9 @@ import org.junit.jupiter.api.*;
 public class PersonTest {
     @BeforeEach
     public void setup() {
-        Person person = new Person("Paul", "McCartney", 2000, true, true, true, true);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        Date date = sdf.parse("2000");
+        Person person = new Person("Paul", "McCartney", date, true, true, true);
     }
 
     @Test

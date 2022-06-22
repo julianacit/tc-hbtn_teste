@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.time.LocalDate;
 
 public class Person {
     private String name;
@@ -35,7 +36,11 @@ public class Person {
     }
 
     public boolean isMEI() {
-        int age = Date.getYear() - bithDate;
+        LocalDate now = new LocalDate();
+        LocalDate birth = .toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+        long age = ChronoUnit.YEARS.between(birth, now);
         if (calculateYearlySalary() < 130000 && age > 18 && !anotherCompanyOwner && !pensioner && !publicServer) {
             return true;
         }
