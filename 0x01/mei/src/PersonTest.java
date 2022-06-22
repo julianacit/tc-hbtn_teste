@@ -1,11 +1,14 @@
 import org.junit.jupiter.api.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class PersonTest {
+    Person person;
     @BeforeEach
     public void setup() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
         Date date = sdf.parse("2000");
-        Person person = new Person("Paul", "McCartney", date, true, true, true);
+        person = new Person("Paul", "McCartney", date, true, true, true);
     }
 
     @Test
