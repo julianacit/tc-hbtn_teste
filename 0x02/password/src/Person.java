@@ -19,7 +19,7 @@ public class Person {
     }
 
     public boolean checkPassword() {
-        atcher matcher = passwordPattern.matcher(password);
+        Matcher matcher = passwordPattern.matcher(password);
         return matcher.matches();
     }
 
