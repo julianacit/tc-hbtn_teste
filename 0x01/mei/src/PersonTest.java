@@ -1,14 +1,14 @@
 import org.junit.jupiter.api.*;
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class PersonTest {
     Person person;
     @BeforeEach
     public void setup() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-        Date date = sdf.parse("2000");
-        person = new Person("Paul", "McCartney", date, true, true, true);
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.YEAR, 2000);
+        person = new Person("Paul", "McCartney", calendar.getTime(), true, true, true);
     }
 
     @Test
